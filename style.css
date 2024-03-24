@@ -3,3 +3,19 @@
 * {
     font-family: "Poppins", "sans-serif";
 }
+
+.contender {
+    transition: 0.2s;
+}
+
+button, #qr-code {
+    transition: 0.5s;
+}
+
+.contender.active {
+    height: 435px;
+}
+
+.contender.active #qr-code {
+    opacity: 1;
+}
