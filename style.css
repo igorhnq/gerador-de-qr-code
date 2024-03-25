@@ -9,7 +9,7 @@
 }
 
 button, #qr-code {
-    transition: 0.5s;
+    transition: 0.1s;
 }
 
 .contender.active {
