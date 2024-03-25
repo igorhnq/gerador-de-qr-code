@@ -6,7 +6,10 @@ const qrCodeImage = document.querySelector('#qr-code-img');
 function generateQrCode() {
     const qrCodeInputValue = qrCodeInput.value;
     
-    if (!qrCodeInputValue) return;
+    if (!qrCodeInputValue) {
+        alert('Insira uma URL ou texto, para criar um QR Code');
+        return;
+    }
 
     qrCodeBtn.innerText = 'Gerando código...';
 
@@ -14,6 +17,11 @@ function generateQrCode() {
 
     qrCodeImage.addEventListener('load', () => {
         container.classList.add('active');
+        qrCodeBtn.innerText = 'Gerar QR Code';
+    });
+
+    qrCodeImage.addEventListener('error', () => {
+        alert('Não foi possível gerar o QR Code. Por favor, tente novamente mais tarde.');
         qrCodeBtn.innerText = 'Gerar QR Code';
     });
 }
@@ -33,5 +41,4 @@ qrCodeInput.addEventListener('keyup', () => {
         container.classList.remove('active');
         qrCodeBtn.innerText = 'Gerar QR Code';
     }
-    
 });
